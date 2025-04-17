@@ -2,6 +2,7 @@ package edu.bekthedev.spring6WebApp.domain;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -10,11 +11,11 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String firstname;
+    private String firstName;
     private String lastName;
 
     @ManyToMany(mappedBy = "authors")
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
     public Set<Book> getBooks() {
         return books;
@@ -32,12 +33,12 @@ public class Author {
         return id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstname) {
+        this.firstName = firstname;
     }
 
     public String getLastName() {
@@ -52,8 +53,9 @@ public class Author {
     public String toString() {
         return "Author{" +
                 "id=" + id +
-                ", firstname='" + firstname + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", books=" + books +
                 '}';
     }
 
@@ -69,4 +71,6 @@ public class Author {
     public int hashCode() {
         return getId().hashCode();
     }
+
+
 }
