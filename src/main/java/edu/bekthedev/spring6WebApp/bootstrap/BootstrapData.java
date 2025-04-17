@@ -55,7 +55,7 @@ import org.springframework.stereotype.Component;
 
 
             Publisher publisher = new Publisher();
-            publisher.setPublisherName("My Publisher");
+            publisher.setPublisherName("Johansson Publishing");
             publisher.setAddress("123 Main");
             Publisher savedPublisher = publisherRepository.save(publisher);
 
