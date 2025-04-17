@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Authors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans p-6">
+
+<h1 class="text-3xl font-bold mb-6 text-center">Author List</h1>
+
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white border border-gray-300 shadow-md rounded-lg">
+    <thead class="bg-indigo-600 text-white">
+    <tr>
+      <th class="py-3 px-6 text-left">ID</th>
+      <th class="py-3 px-6 text-left">First Name</th>
+      <th class="py-3 px-6 text-left">Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="author : ${authors}" class="border-t hover:bg-indigo-50">
+      <td class="py-2 px-6" th:text="${author.id}">123</td>
+      <td class="py-2 px-6" th:text="${author.firstName}">John</td>
+      <td class="py-2 px-6" th:text="${author.lastName}">Thompson</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
